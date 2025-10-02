@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ VoltScript Web Compiler</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>⚡ VoltScript Compiler</h1>
+      <p class="subtitle">Consept Stage</p>
+    </header>
+
+    <!-- Editor Panels -->
+    <section class="editor-section">
+      <!-- VoltScript Input Panel -->
+      <div class="panel">
+        <div class="panel-header">
+          <h2>VoltScript Code</h2>
+           <button id="compile-btn" onclick="compileCode()">⚡ Compile</button>
+        </div>
+        <textarea 
+          id="voltscript-code" 
+          class="code-editor" 
+          spellcheck="false"
+          aria-label="VoltScript code editor"
+          placeholder="// Write your VoltScript code here
+int x = 10;
+int y = 20;
+print(x + y);"></textarea>
+      </div>
+
+      <!-- Generated C++ Output Panel -->
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Generated C++ Code</h2>
+          <div class="actions">
+            <button id="copy-btn" onclick="copyCpp()">📋 Copy</button>
+            <button id="download-btn" onclick="downloadCpp()">⬇️ Download</button>
+          </div>
+        </div>
+        <pre id="cpp-output" class="output" aria-live="polite">// Compiled C++ will appear here</pre>
+      </div>
+    </section>
+
+    <!-- Error Message -->
+    <div id="error-message" class="error hidden" role="alert"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>VoltScript ⚡ | Experimental Open-Source Language | <a href="https://github.com/VoltScript" target="_blank">GitHub</a></p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
