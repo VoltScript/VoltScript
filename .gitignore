@@ -1,0 +1,9 @@
+# Python virtual environments
+venv/
+.venv/
+
+# Other common Python ignores
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
